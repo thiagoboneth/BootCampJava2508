@@ -1,10 +1,10 @@
 public class Veiculo {
-    double velocidade;
-    double aceleracao;
-    double anguloDeVirada;
-    String patente;
-    int peso;
-    int rodas;
+    private double velocidade;
+    private double aceleracao;
+    private double anguloDeVirada;
+    private String patente;
+    private int peso;
+    private int rodas;
 
     public Veiculo(double velocidade, double aceleracao, double anguloDeVirada, String patente, int peso, int rodas) {
         this.velocidade = velocidade;
@@ -63,6 +63,15 @@ public class Veiculo {
         this.rodas = rodas;
     }
 
+
+    public class motos extends Veiculo{
+
+        public motos(double velocidade, double aceleracao, double anguloDeVirada, String patente, int peso, int rodas) {
+            super(velocidade, aceleracao, anguloDeVirada, patente, peso, rodas);
+            peso = 300;
+            rodas = 2;
+        }
+    }
     @Override
     public String toString() {
         return "Veiculo{" +
@@ -74,5 +83,4 @@ public class Veiculo {
                 ", rodas=" + rodas +
                 '}';
     }
-
 }
