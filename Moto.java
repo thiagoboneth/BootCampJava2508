@@ -1,7 +1,16 @@
 public class Moto extends Veiculo{
-    public Moto(double velocidade, double aceleracao, double anguloDeVirada, String patente, int peso, int rodas) {
-        super(velocidade, aceleracao, anguloDeVirada, patente, peso, rodas);
-        peso = 300;
-        rodas = 2;
+
+    double peso;
+    int rodas;
+
+    public Moto(int velocidade, int aceleracao, double anguloDeVirada, String placaMoto) {
+        super(velocidade, aceleracao, anguloDeVirada, placaMoto);
+
+        setPeso(300);
+        setRodas(2);
+    }
+
+    public Moto(String placa) {
+        super(placa);
     }
 }

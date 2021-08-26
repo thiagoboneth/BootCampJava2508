@@ -1,18 +1,22 @@
+import java.util.Objects;
+
 public class Veiculo {
     private double velocidade;
     private double aceleracao;
     private double anguloDeVirada;
-    private String patente;
+    private String placa;
     private int peso;
     private int rodas;
 
-    public Veiculo(double velocidade, double aceleracao, double anguloDeVirada, String patente, int peso, int rodas) {
+    public Veiculo(double velocidade, double aceleracao, double anguloDeVirada, String placa) {
         this.velocidade = velocidade;
         this.aceleracao = aceleracao;
         this.anguloDeVirada = anguloDeVirada;
-        this.patente = patente;
-        this.peso = peso;
-        this.rodas = rodas;
+        this.placa = placa;
+    }
+
+    public Veiculo(String placa) {
+        this.placa = placa;
     }
 
     public double getVelocidade() {
@@ -39,12 +43,12 @@ public class Veiculo {
         this.anguloDeVirada = anguloDeVirada;
     }
 
-    public String getPatente() {
-        return patente;
+    public String getPlaca() {
+        return placa;
     }
 
-    public void setPatente(String patente) {
-        this.patente = patente;
+    public void setPlaca(String placa) {
+        this.placa = placa;
     }
 
     public int getPeso() {
@@ -63,24 +67,28 @@ public class Veiculo {
         this.rodas = rodas;
     }
 
-
-    public class motos extends Veiculo{
-
-        public motos(double velocidade, double aceleracao, double anguloDeVirada, String patente, int peso, int rodas) {
-            super(velocidade, aceleracao, anguloDeVirada, patente, peso, rodas);
-            peso = 300;
-            rodas = 2;
-        }
-    }
     @Override
     public String toString() {
         return "Veiculo{" +
                 "velocidade=" + velocidade +
                 ", aceleracao=" + aceleracao +
                 ", anguloDeVirada=" + anguloDeVirada +
-                ", patente='" + patente + '\'' +
+                ", patente='" + placa + '\'' +
                 ", peso=" + peso +
                 ", rodas=" + rodas +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass() && (o instanceof Veiculo) == false ) return false;
+        Veiculo veiculo = (Veiculo) o;
+        return this.placa.equals(veiculo.placa);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(velocidade, aceleracao, anguloDeVirada, placa, peso, rodas);
     }
 }

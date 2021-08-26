@@ -1,8 +1,13 @@
-public class Carro extends Veiculo{
+public class Carro extends Veiculo {
 
-    public Carro(double velocidade, double aceleracao, double anguloDeVirada, String patente, int peso, int rodas) {
-        super(velocidade, aceleracao, anguloDeVirada, patente, peso, rodas);
-        peso = 1000;
-        rodas = 4;
+    public Carro(int velocidade, int aceleracao, double anguloDeVirada, String placaDeCarro) {
+        super(velocidade, aceleracao, anguloDeVirada, placaDeCarro);
+
+        setPeso(1000);
+        setRodas(4);
+    }
+
+    public Carro (String placa) {
+        super(placa);
     }
 }
